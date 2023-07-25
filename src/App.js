@@ -1,11 +1,18 @@
-import logo from "./logo.svg"
+import { createElement } from "react";
 function App() {
+  const todos = ["todo1", "todo2", "todo3"];
+
   return (
-    <div className="App">
-      Test
-      <img src="/logo192.png" alt="" />
-      <img src={logo} alt="" />
-    </div>
+    <main id="main" className="test">
+      <h1>prototurk.com</h1>
+      {
+        todos.map((todo, index) => (
+          <li key={index} tabIndex={3}>{todo} </li>
+        ))
+      }
+      <label htmlFor="search" tabIndex={2} onClick={() => (alert("merhaba"))}>Arama</label>
+      <input type="text" id="search" tabIndex={1} />
+    </main>
   );
 }
 
